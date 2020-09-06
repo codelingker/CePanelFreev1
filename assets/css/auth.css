@@ -1,0 +1,252 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #0084ff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    font-weight: 600;
+    font-size: 130%;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+h6 {
+    font-weight: 600;
+    font-size: 100%;
+    margin-bottom: 7px;
+    letter-spacing: 0.7px;
+    transition: all 250ms;
+    color: #777;
+}
+
+.login-box {
+    position: relative;
+    width: 55%;
+    background-color: #fff;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 30px;
+    animation: fadeIn 800ms ease;
+}
+.login-content {
+    position: relative;
+}
+.login-left {
+    float: left;
+    width: calc(100% - 280px);
+}
+.login-left img {
+    width: 100%;
+}
+.login-right {
+    float: right;
+    width:  250px;
+}
+.login-content form {
+    animation: fadeIn 800ms ease;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.grup {
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+}
+.grup:last-child {
+    margin-bottom: 10px;
+}
+.btn-grup {
+    width: 100%;
+}
+.field {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    outline: none;
+    border-bottom: 3px solid #ccc;
+    transition: all 200ms;
+    background-color: transparent;
+    font-size: 15px;
+}
+.grup h6 {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+}
+.field:focus, .field:not(:placeholder-shown) {
+    border-color: #0084ff;
+}
+.field:focus ~ h6, .field:not(:placeholder-shown) ~ h6 {
+    top: -20px;
+    font-size: 12px;
+    color: #0084ff;
+}
+.btn {
+    border: 0;
+    outline: none;
+    width: 100%;
+    padding: 7px 20px;
+    background-color: #0084ff;
+    color: #fff!important;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 50px;
+    margin-top: 15px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 250ms;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+
+.tmb {
+    margin-bottom: 50px;
+}
+
+.tmb a {
+    color: #444;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 7px;
+    border-radius: 50px;
+}
+.tmb .active {
+    padding: 5px 20px;
+    background-color: #0084ff;
+    color: #fff;
+    transition: all 200ms;
+}
+
+#form-daftar {
+    display: none;
+}
+
+.forgot {
+    position: relative;
+    top: -25px;
+    text-align: right;
+    width: 100%;
+}
+.forgot a {
+    color: #0084ff;
+    text-decoration: none;
+}
+.forgot-btn {
+    border: 0;
+    outline: none;
+    padding: 4px 15px;
+    background-color: #0084ff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 250ms;
+}
+.forgot-btn:hover {
+    opacity: 0.7;
+}
+.showhide, .showhide2 {
+    position: absolute;
+    right: 0;
+}
+.showhide input, .showhide2 input {
+    display: none;
+}
+.showhide label, .showhide2 label {
+    font-size: 11px;
+    background-color: #ccc;
+    padding: 3px 7px;
+    border-radius: 20px;
+    color: #444;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#password, #password2 {
+    padding-right: 50px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .login-box {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .login-box {
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        border-radius: 0;
+    }
+    .login-box:before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-image: linear-gradient(to bottom left, #0046af, #00abdf) ;
+        width: 100%;
+        height: 40vh;
+    }
+    .login-left {
+        display: none;
+    }
+    .login-right {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+        padding: 50px 30px 35px;
+        margin-top: 100px;
+    }
+       
+    .tmb {
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .tmb a {
+        color: #fff;
+        margin-right: 15px;
+        font-size: 15px;
+    }
+    .tmb .active {
+        padding: 7px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        transition: all 200ms;
+    }
+    .login-footer {
+        display: block!important;
+        color: #000;
+    }
+    .login-footer a {
+        color: rgba(0, 0, 0, 0.5);
+    }
+}
+

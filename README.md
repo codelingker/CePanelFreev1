@@ -1,1 +1,1 @@
-# CePanel V1.0.0 | Design By Codelingker
+# CePanel V1 | Design By Codelingker

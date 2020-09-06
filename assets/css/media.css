@@ -20,7 +20,7 @@
 }
 @media screen and (max-width: 680px) {
     .header-right .user-menu {
-        width: 70px;
+        width: 75px;
         justify-content: center;
         padding: 0;
     }

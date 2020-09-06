@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CePanel | Login</title>
+
+<link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+
+<!-- style css -->
+<link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css" />
+<link rel="stylesheet" href="assets/css/auth.css" />
+<link rel="stylesheet" href="assets/css/mod.css" />
+<link rel="stylesheet" href="assets/css/media.css" />
+
+</head>
+<body>
+
+<div class="login-box">
+    <div class="login-content">        
+        <div class="login-left">
+            <img src="assets/img/login2.svg" />
+        </div>
+        <div class="login-right">
+            <div class="tmb">
+                <a href="" id="tmb_login" class="active">Masuk</a>               
+                <a href="" id="tmb_daftar">Daftar</a>               
+            </div>
+            <form id="form-login" method="post">
+                <div class="grup">
+                    <input type="text" class="field" placeholder=" " />
+                    <h6>Username</h6>
+                </div>
+                <div class="grup">
+                    <input type="password" class="field" placeholder=" " id="password" />
+                    <h6>Password</h6>
+                    <span class="showhide">
+                        <input type="checkbox" id="inp_pass" />
+                        <label for="inp_pass">show</label>
+                    </span>
+                </div>
+                <div class="forgot">
+                    <small>
+                        <a href="" class="btn-popup">Lupa Password?</a>
+                    </small>
+                </div>
+                <div class="btn-grup">
+                    <button type="submit" class="btn">Masuk</button>
+                </div>
+            </form>
+            
+            <form id="form-daftar" method="post">
+                <div class="grup">
+                    <input type="text" class="field" placeholder=" " />
+                    <h6>Nama Lengkap</h6>
+                </div>
+                <div class="grup">
+                    <input type="text" class="field" placeholder=" " />
+                    <h6>No HP / WA</h6>
+                </div>
+                <div class="grup">
+                    <input type="password" class="field" placeholder=" " id="password2" />
+                    <h6>Password</h6>
+                    <span class="showhide2">
+                        <input type="checkbox" id="inp_pass2" />
+                        <label for="inp_pass2">show</label>
+                    </span>
+                </div>
+                <div class="btn-grup">
+                    <button type="submit" class="btn">Daftar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="mt-4 text-center login-footer d-none">
+            <h6><i class="far fa-copyright"></i> <script>document.write(new Date().getFullYear())</script> | <a href=""> CePanel</a> </h6>
+        </div>
+    </div>
+</div>
+
+<script src="assets/vendors/jquery/jquery-3.5.1.min.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendors/sweetAlert/sweetalert2.all.min.js"></script>
+<script src="assets/vendors/select2/js/select2.min.js"></script>
+<script src="assets/vendors/chartjs/chart.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/cht.js"></script>
+<script type="text/javascript">
+    $('.tmb a').on('click', function(e) {
+        e.preventDefault();
+        let atribut = $(this).attr('id');
+    
+        $('.tmb a').removeClass('active');
+        $(this).addClass('active');
+        
+        if(atribut == "tmb_login") {
+            $('#form-login').css({display: 'block'});
+            $('#form-daftar').css({display: 'none'});
+        } else if (atribut == "tmb_daftar") {
+            $('#form-login').css({display: 'none'});
+            $('#form-daftar').css({display: 'block'});        
+        }
+    });
+
+    $('#inp_pass').on('click', function() {
+        if($(this).is(':checked')) {
+            $('#password').attr('type', 'text');
+            $('.showhide label').text('hide');
+        } else {
+            $('#password').attr('type', 'password');
+            $('.showhide label').text('show');
+        }
+    });
+
+    $('#inp_pass2').on('click', function() {
+        if($(this).is(':checked')) {
+            $('#password2').attr('type', 'text');
+            $('.showhide2 label').text('hide');
+        } else {
+            $('#password2').attr('type', 'password');
+            $('.showhide2 label').text('show');
+        }
+    });
+
+</script>
+</body>
+</html>
