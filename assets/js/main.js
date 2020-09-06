@@ -2,27 +2,31 @@ $(function() {
     nav_dropdown();
     navmenu();
     logOut();
-    shohidenav();
     show_pass();
-
+       
+    
     function nav_dropdown() {
         $('.navmenu .dropdown').on('click', function(e) {
-            e.preventDefault();
-            
+            e.preventDefault();            
         })
     }
-
+    
     function navmenu() {
-        $('.left-menu-icon').on('click', function() {
-            $('body').toggleClass('show-navmenu');
+        $('.navmenu ul ul .active').closest('ul').css('display','block');
+        $('.navmenu ul ul .active').closest('ul').parent().children('a').toggleClass('tampil');
+
+        $('.navmenu-ico button').on('click', function(e) {
+            e.preventDefault();
+
+            $('body').toggleClass('showhide-nav');
         })
     }
 
     function logOut() {
         $('.logOut').on('click', function(e) {
             e.preventDefault();
-
-            const href = $(this).attr('href');
+            
+            let href = $(this).attr('href');
 
             Swal.fire({
                 icon: 'question',
@@ -41,15 +45,7 @@ $(function() {
             }) 
         })
     }
-
-    function shohidenav() {
-        $('.navmenu-ico button').on('click', function(e) {
-            e.preventDefault();
-
-            $('body').toggleClass('showhide-nav');
-        })
-    }
-
+    
     function show_pass() {
         $('#showhide_pass').on('click', function() {
             if($(this).is(':checked')) {
@@ -58,10 +54,11 @@ $(function() {
             } else {
                 $('#showhide_pass_lab').attr('class', 'fa fa-eye-slash');
                 $('#password').attr('type', 'password');
-
+                
             }
         })
     }
+    
 });
 
 $(window).on('load', function() {
@@ -79,5 +76,6 @@ $(".navmenu .sembunyi, .navmenu .tampil").click(function(event) {
         $(".navmenu ul ul").filter(":visible").slideUp("normal");
         $(this).parent().children("ul").stop(true,true).slideDown("normal");
     }
-
 });
+
+$('.select-with-src').select2();

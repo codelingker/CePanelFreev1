@@ -11,6 +11,9 @@
     .showhide-nav .navmenu-ico {
         left: 250px;
     }
+    .showhide-nav .navmenu-ico button:before {
+        content: "\f060";
+    }
     main, .navInfo {
         width: 100%;
     }
@@ -24,6 +27,9 @@
     .header-right .user-menu span {
         display: none;
     }
+    .showhide-nav .header-right {
+        display: none;
+    }
     .submenu {
         left: -115px;
     }
@@ -32,6 +38,11 @@
     }
     .breadcrumb {
         visibility: hidden;
+    }
+}
+@media screen and (max-width: 420px) {
+    body {
+        background-color: #fffbec;
     }
 }
 @media screen and (max-width: 320px) {
